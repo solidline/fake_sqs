@@ -18,6 +18,12 @@ module FakeSQS
               xml.ReceiptHandle receipt
               xml.MD5OfBody message.md5
               xml.Body message.body
+
+              xml.Attribute {
+                xml.Name('ApproximateReceiveCount')
+                xml.Value(5)
+              }
+
             end
           end
         end
